@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT mobber (login|logout|message|wall|listuser|listgroup|joingroup|partgroup|groupmessage|creategroup|kick)>
+<!ELEMENT login (name, password)>
+<!ELEMENT message (recipient*, mesg)>
+<!ELEMENT wall (mesg)>
+<!ELEMENT joingroup (group)>
+<!ELEMENT partgroup (group)>
+<!ELEMENT creategroup (group, desc)>
+<!ELEMENT groupmessage (group, mesg)>
+<!ELEMENT kick (group, user)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT logout (#PCDATA)>
+<!ELEMENT recipient (#PCDATA)>
+<!ELEMENT mesg (#PCDATA)>
+<!ELEMENT listuser (#PCDATA)>
+<!ELEMENT listgroup (#PCDATA)>
+<!ELEMENT group (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT user (#PCDATA)>

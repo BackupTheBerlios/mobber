@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+
+	<appender name="filer" class="org.apache.log4j.FileAppender">
+           <param name="File" value="mobber.log" />	
+           <layout class="org.apache.log4j.PatternLayout">
+             <param name="ConversionPattern"
+		    value="%-4r [%t] %-5p %C{1} - %m\n"/>
+           </layout>	    
+	</appender>
+	
+	<category name="mobber">
+	  <priority value="warn" />
+	</category>
+	
+	<root>
+	   <priority value ="warn" />
+   	   <appender-ref ref="filer" />
+	</root>
+	
+</log4j:configuration>

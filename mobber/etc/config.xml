@@ -1,0 +1,29 @@
+<mobber-config>
+ <!-- The config-file for log4j -->
+ <log-config>etc/logger.xml</log-config>
+ <!-- The port of the Mobber -->
+ <port>2405</port>
+ <!-- Maximum of MobberUsers -->
+ <maxusers>1</maxusers>
+ <!-- The namespace of the commands -->
+ <command-ns>mobber.server.logik.commands.</command-ns>
+ <!-- Validate the clients input -->
+ <command-validate>no</command-validate>
+ <!-- The DTD of the commands -->
+ <command-dtd>etc/mobber.dtd</command-dtd>
+ <!-- The authentification-module to use -->
+ <auth>
+  <auth-module>mobber.server.logik.authentification.SimpleAuth</auth-module>
+  <auth-jdbc-url>jdbc:mysql://localhost/mobber?user=root</auth-jdbc-url>
+  <auth-jdbc-table>users</auth-jdbc-table>
+  <auth-jdbc-login-row>user</auth-jdbc-login-row>
+  <auth-jdbc-password-row>pass</auth-jdbc-password-row>
+ </auth>
+ <!-- The admin login -->
+ <admin>
+  <user>Stefan</user>
+  <pass>Stefan</pass>
+ </admin>
+</mobber-config>
+
+
