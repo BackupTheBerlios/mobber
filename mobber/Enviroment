@@ -1,0 +1,2 @@
+export CLASSPATH=./build/:./lib/jdom.jar:./lib/xerces.jar:./lib/mysql_comp.jar:./lib/log4j.jar
+echo setting ClassPath

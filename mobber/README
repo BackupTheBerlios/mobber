@@ -1,0 +1,67 @@
+Mobber README
+=============
+
+Description:
+=============
+Mobber is a universal conferencing and chat server that sends and receives XML-documents. 
+-It has a pluggable authentification module
+-You can easily extend the command-set
+-It is highly configurable
+
+
+License:
+=======
+Mobber has a GPL license. See LICENSE in this directory.
+
+Requirements:
+==================
+- ANT (http://jakarta.apache.org) 
+- Log4J (http://jakarta.apache.org) 
+- Xerces (http://xml.apache.org) 
+- JDOM (http://www.jdom.org) 
+
+optional:
+- The mm.mysql-JDBC-Driver (http://www.worldserver.com/mm.mysql/ for MySQL-Auhentification)
+- Sun JNDI and LDAP service provider (http://java.sun.com/products/jndi/ for LDAP-Auhentification)
+
+Build:
+======
+in the top-level directory:
+
+1. edit Enviroment to include the optional *.jars in the CLASSPATH 
+2. source the Enviroment
+   #. Enviroment
+3. start the build 
+   #./build.sh dist
+
+
+Makefile-Targets:
+=================
+#./build.sh compile    <------ compiles
+#./build.sh dist       <------ makes the mobber.jar
+#./build.sh clean      <------ cleans 
+#./build.sh doc        <------ makes the api-doc 
+
+Startup:
+========
+CLASSPATH must point to xerces.jar, jdom.jar, log4j.jar and mobber-[timestamp].jar.
+
+1.Set CLASSPATH:
+  #export CLASSPATH=lib/xerces.jar:lib/jdom.jar:dist/mobber-2001-05-01.jar
+2.edit config-file:
+3.start the server with:
+  #java mobber.server.Server <config-file> 
+
+Other:
+======
+Please read the HTML-Docs in doc/html/
+
+
+
+
+
+
+
+
+
+

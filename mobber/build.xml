@@ -1,0 +1,70 @@
+<project name="MOBBER" default="dist" basedir="./">
+
+         <!-- set global properties for this build -->
+         <property name="src" value="src" />
+         <property name="build" value="build" />
+         <property name="dist"  value="dist" />
+         <property name="api"  value="doc/api" />
+         <property name="build.compiler" value="jikes"/>
+         <property name="optimize" value="on"/>
+         <property name="deprecation" value="on"/>
+
+         <target name="prepare">
+           <tstamp/>
+           <mkdir dir="${build}" />
+           <mkdir dir="${dist}" />
+           <mkdir dir="${api}" />
+           <available classname="org.gjt.mm.mysql.Driver" property="mysql.present"/>
+         </target>
+
+         <patternset id="src.files">
+          <exclude name="**/MySQLAuth.java" unless="mysql.present" />
+         </patternset>
+
+
+
+
+         <target name="compile" depends="prepare">
+           <!-- Compile the java code from ${src} into ${build} -->
+           <javac srcdir="${src}" destdir="${build}" depend="yes" >
+           <classpath>
+            <pathelement location="lib/jdom.jar" />
+            <pathelement location="lib/xerces.jar" />
+            <pathelement location="lib/log4j.jar" />
+            <pathelement location="lib/mysql_comp.jar" />
+           </classpath>
+           <patternset refid="src.files" /> 
+           </javac>
+         </target>
+
+
+        <target name="dist" depends="compile">
+           <jar jarfile="${dist}/Mobber-${DSTAMP}.jar" basedir="${build}" />
+        </target>
+
+        <target name="doc" depends="prepare">
+         <javadoc packagenames="mobber.*"
+           sourcepath="src"
+           destdir="doc/api"
+           author="true"
+           version="true"
+           use="true"
+           windowtitle="Mobber"
+           doctitle="&lt;h1&gt;Mobber&lt;/h1&gt;"
+           bottom="&lt;i&gt;Copyright &#169; 2001 Stefan Toepfer All Rights Reserved.&lt;/i&gt;">
+           <group title="Server" packages="mobber.s*"/>
+           <group title="Client" packages="mobber.c*"/>
+          </javadoc>
+        </target>
+
+
+        <target name="clean">
+           <delete dir="${build}" />
+           <delete dir="${dist}" />
+           <delete dir="${api}" />
+        </target>
+       </project>
+
+
+
+

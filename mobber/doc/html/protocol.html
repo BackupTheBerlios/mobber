@@ -1,0 +1,211 @@
+<html>
+<body bgcolor=#ffffff text=#000000 link=#000000 vlink=#000000 alink=#000000>
+<a href="index.html"><img border=0 alt="<MOBBER />" src="images/mobber-logo.gif"></a>
+<table border = 0>
+<tr>
+<td width=150 valign=top>
+<a href="news.html">&lt;News /&gt;</a><p>
+<a href="project.html">&lt;Description /&gt;</a><p>
+<a href="documentation.html">&lt;Docs /&gt;</a><p>
+<a href="downloads.html">&lt;Downloads /&gt;</a><p>
+</td>
+<td valign=top>
+
+<h3>Protocol</h3>
+The initial commandset provides the following commands:
+<p>
+<ul>
+<li><b>Login</b><br>
+<b>Log into the Server</b><p>
+
+&lt;mobber&gt;<br>
+ &lt;login&gt;<br>
+  &lt;name&gt;THE USERNAME&lt;/name&gt;<br>
+  &lt;password&gt;THE PASSWORD&lt;/password&gt;<br>
+ &lt;/login&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<b>Answer:</b><br>
+
+&lt;mobber&gt;<br>
+  &lt;login&gt;<br>
+    &lt;answer&gt;OK&lt;/answer&gt;<br>
+  &lt;/login&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<li><b>Logout</b><br>
+<b>Log out</b><p>
+
+&lt;mobber&gt;<br>
+ &lt;logout /&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<b>Answer:</b>
+<p>
+&lt;mobber&gt;<br>
+  &lt;logout&gt;<br>
+    &lt;answer&gt;OK BYE&lt;/answer&gt;<br>
+  &lt;/logout&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<li><b>Listuser</b><br>
+<b>List all users currently online</b><p>
+
+&lt;mobber&gt;<br>
+ &lt;listuser /&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<b>Answer:</b>
+<p>
+&lt;mobber&gt;<br>
+  &lt;listuser&gt;<br>
+    &lt;user&gt;USER1&lt;/user&gt;<br>
+    &lt;user&gt;USER2&lt;/user&gt;<br>
+    &lt;user&gt;USERn&lt;/user&gt;<br>
+  &lt;/listuser&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<li><b>Wall</b><br>
+<b>Message to all users</b><p>
+
+&lt;mobber&gt;<br>
+ &lt;wall&gt;<br>
+  &lt;mesg&gt;THE MESSAGE&lt;/mesg&gt;<br>
+ &lt;/wall&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<b>Answer:</b>
+<p>
+&lt;mobber&gt;<br>
+  &lt;wall&gt;<br>
+    &lt;sender&gt;THE SENDER&lt;/sender&gt;<br>
+    &lt;mesg&gt;THE MESSAGE&lt;/mesg&gt;<br>
+  &lt;/wall&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<li><b>Message</b><br>
+<b>Message to a subset of users</b>
+<p>
+&lt;mobber&gt;<br>
+ &lt;message&gt;<br>
+  &lt;recipient&gt;USER1&lt;/recipient&gt;<br>
+  &lt;recipient&gt;USER2&lt;/recipient&gt;<br>
+  &lt;recipient&gt;USERn&lt;/recipient&gt;<br>
+  &lt;mesg&gt;THE MESSAGE&lt;/mesg&gt;<br>
+ &lt;/message&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<b>Answer:</b>
+<p>
+&lt;mobber&gt;<br>
+  &lt;message&gt;<br>
+    &lt;sender&gt;THE SENDER&lt;/sender&gt;<br>
+    &lt;mesg&gt;THE MESSAGE&lt;/mesg&gt;<br>
+  &lt;/message&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<li><b>Listgroup</b><br>
+<b>List the available groups</b>
+<p>
+&lt;mobber&gt;<br>
+ &lt;listgroup /&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<b>Answer:</b>
+<p>
+&lt;mobber&gt;<br>
+  &lt;listgroup&gt;<br>
+    &lt;group&gt;<br>
+      &lt;name&gt;GROUPNAME&lt;/name&gt;<br>
+      &lt;description&gt;GROUP DESCRIPTION&lt;/description&gt;<br>
+    &lt;/group&gt;<br>
+  &lt;/listgroup&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<li><b>Joingroup</b><br>
+<b>Join a group</b>
+<p>
+&lt;mobber&gt;<br>
+ &lt;joingroup&gt;<br>
+ &lt;group&gt;GROUPNAME&lt;/group&gt;<br>
+ &lt;/joingroup&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<b>Answer:</b><br>
+<p>
+&lt;mobber&gt;<br>
+  &lt;joingroup&gt;<br>
+ &lt;group&gt;GROUPNAME&lt;/group&gt;<br>
+    &lt;answer&gt;OK&lt;/answer&gt;<br>
+  &lt;/joingroup&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+
+<li><b>Partgroup</b><br>
+<b>Leave a group</b>
+<p>
+&lt;mobber&gt;<br>
+ &lt;partgroup&gt;<br>
+ &lt;group&gt;GROUPNAME&lt;/group&gt;<br>
+ &lt;/partgroup&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<b>Answer:</b>
+<p>
+&lt;mobber&gt;<br>
+  &lt;partgroup&gt;<br>
+ &lt;group&gt;GROUPNAME&lt;/group&gt;<br>
+    &lt;answer&gt;OK&lt;/answer&gt;<br>
+  &lt;/partgroup&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<li><b>Groupmessage</b><br>
+<b>Message to all users of the group</b>
+<p>
+&lt;mobber&gt;<br>
+ &lt;groupmessage&gt;<br>
+  &lt;group&gt;GROUPNAME&lt;/group&gt;<br>
+  &lt;mesg&gt;MESSAGE&lt;/mesg&gt;<br>
+ &lt;/groupmessage&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+<b>Answer:</b>
+<p>
+&lt;mobber&gt;<br>
+  &lt;groupmessage&gt;<br>
+    &lt;group&gt;GROUPNAME&lt;/group&gt;<br>
+    &lt;sender&gt;SENDER&lt;/sender&gt;<br>
+    &lt;mesg&gt;MESSAGE&lt;/mesg&gt;<br>
+  &lt;/groupmessage&gt;<br>
+&lt;/mobber&gt;<br>
+<p>
+to be continued....
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</td>
+</tr>
+</table>
+</body>
+<html>

@@ -1,0 +1,56 @@
+<html>
+<body bgcolor=#ffffff text=#000000 link=#000000 vlink=#000000 alink=#000000>
+<a href="index.html"><img border=0 alt="<MOBBER />" src="images/mobber-logo.gif"></a>
+<table border = 0>
+<tr>
+<td width=150 valign=top>
+<a href="news.html">&lt;News /&gt;</a><p>
+<a href="project.html">&lt;Description /&gt;</a><p>
+<a href="documentation.html">&lt;Docs /&gt;</a><p>
+<a href="downloads.html">&lt;Downloads /&gt;</a><p>
+</td>
+<td valign=top>
+
+<h3>Configuration</h3>
+The <b>Mobber</b> configuration file is an XML file with the following structure:
+<p>
+<pre>
+<mobber-config>
+ <!-- The config-file for log4j -->
+ <log-config>/path/to/logger.xml</log-config>
+ <!-- The port of the Mobber -->
+ <port>2405</port>
+ <!-- Maximum of MobberUsers -->
+ <maxusers>10</maxusers>
+ <!-- The namespace of the commands -->
+ <command-ns>mobber.server.logik.commands.</command-ns>
+ <!-- Validate the clients input -->
+ <command-validate>no</command-validate>
+ <!-- The DTD of the commands for validation-->
+ <command-dtd>/path/to/mobber.dtd</command-dtd>
+ <!-- The authentification -->
+ <auth>
+ <!-- The authentification-module to use (SimpleAuth or MySQLAuth)-->
+  <auth-module>mobber.server.logik.authentification.SimpleAuth</auth-module>
+ <!-- The jdbc-url -->
+  <auth-jdbc-url>jdbc:mysql://localhost/mobber?user=root</auth-jdbc-url>
+ <!-- The DB-Table to look for -->
+  <auth-jdbc-table>users</auth-jdbc-table>
+ <!-- The DB-Tables row to look for user -->
+  <auth-jdbc-login-row>user</auth-jdbc-login-row>
+ <!-- The DB-Tables row to look for password -->
+  <auth-jdbc-password-row>pass</auth-jdbc-password-row>
+ </auth>
+ <!-- The admin login (change me)-->
+ <admin>
+  <user>mobber</user>
+  <pass>mobber</pass>
+ </admin>
+</mobber-config>
+</pre>
+
+</td>
+</tr>
+</table>
+</body>
+<html>
